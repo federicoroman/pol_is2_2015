@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kse@wjmr2bhmbhgk8*504vm%z67s0fbohi2qn^323g8sxlltkc'
+SECRET_KEY = '2t02zm#(dhzz4t^u5d#8!2__5m!yn#od3kkzo--xp*&_@$u@*#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
+    'section',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +57,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

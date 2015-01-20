@@ -1,14 +1,16 @@
 import datetime
 
-from django.db import models
 from django.utils import timezone
+from django.db import models
+
+# Create your models here.
 
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
-    def __str__(self):
+    def __str__(self):              # __unicode__ on Python 2
         return self.question_text
 
     def was_published_recently(self):
@@ -23,23 +25,5 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
-    def __str__(self):
+    def __str__(self):              # __unicode__ on Python 2
         return self.choice_text
-
-
-class Persona(models.Model):
-    nombre = models.CharField(max_length=200)
-    apellido = models.CharField(max_length=200)
-    edad = models.IntegerField(default=1)
-
-    def __str__(self):
-        return self.nombre
-
-
-class Auto(models.Model):
-    persona = models.ForeignKey(Persona)
-    marca = models.CharField(max_length=200)
-    tipo = ['4x4','otro']
-
-    def __str__(self):
-        return self.marca
