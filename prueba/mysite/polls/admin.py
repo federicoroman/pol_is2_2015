@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from polls.models import Question, Choice
+from polls.models import Poll, Choice
 
 
 class ChoiceInline(admin.StackedInline):
@@ -19,5 +19,5 @@ class QuestionAdmin(admin.ModelAdmin):
         ]
     inlines = [ChoiceInline]
 
-admin.site.register(Question,QuestionAdmin)
+admin.site.register(Poll, QuestionAdmin)
 admin.site.register(Choice)
